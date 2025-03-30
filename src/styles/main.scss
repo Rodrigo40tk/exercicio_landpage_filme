@@ -1,5 +1,32 @@
-$bgColor:rgb(24, 121, 0);
+@use'variaveis';
+@use 'hero';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
-    background-color: $bgColor;
+    background-color: variaveis.$corDeFundo;
+}
+
+@mixin text($fontSize:16px){
+    font-size: $fontSize;
+    line-height:$fontSize + 10px;
+}
+
+.title--big{
+    @include text(21px);
+    color:variaveis.$corTextoPrincipal;
+}
+
+.text{
+    @include text(16px);
+    color:variaveis.$corDeTextoSecundario;
+}
+
+.text--small{
+    @include text(14px);
+    color:variaveis.$corDeTextoSecundario;
 }
