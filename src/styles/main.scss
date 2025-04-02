@@ -1,5 +1,8 @@
 @use'variaveis';
 @use 'hero';
+@use'shows';
+@use'elenco';
+@use'header';
 
 * {
     margin: 0;
@@ -7,26 +10,73 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: variaveis.$corDeFundo;
 }
 
-@mixin text($fontSize:16px){
+@mixin text($fontSize: 16px) {
     font-size: $fontSize;
-    line-height:$fontSize + 10px;
+    line-height: $fontSize + 10px;
 }
 
-.title--big{
-    @include text(21px);
-    color:variaveis.$corTextoPrincipal;
+.title--big {
+    @include text(29px);
+    color: variaveis.$corTextoPrincipal;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
 }
 
-.text{
+.text {
+    @include text(25px);
+    color: variaveis.$corDeFundo;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.text--small {
     @include text(16px);
-    color:variaveis.$corDeTextoSecundario;
+    color: variaveis.$corDeFundo;
+    font-weight:bold;
+    
 }
 
-.text--small{
-    @include text(14px);
-    color:variaveis.$corDeTextoSecundario;
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+    color: variaveis.$corDeTextoSecundario;
+    background-color: variaveis.$corDeFundoBotaoPrimario;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 2px 14px;
+    letter-spacing: 1px;
+    border: 1px solid variaveis.$corDeFundoBotaoPrimario;
+
+    &:hover{
+        background-color: lighten(variaveis.$corDeFundoBotaoPrimario, 3%);
+    }
+
+
+    &--secondary {
+        background-color: variaveis.$corDeFundoBotaoSecundario;
+        border-color:variaveis.$corDeFundoBotaoSecundario ;
+
+        &:hover{
+            background-color: lighten(variaveis.$corDeFundoBotaoSecundario, 3%);
+        }
+    }
+
+    &--dark {
+        background-color: rgba(variaveis.$corDeFundoBotaoPrimario,0.8);
+        border-color: variaveis.$corDeTextoSecundario;
+
+        &:hover{
+            background-color:variaveis.$corDeTextoSecundario;
+            color: variaveis.$corDeFundo;
+        }
+    }
+
 }

@@ -1,0 +1,112 @@
+.shows {
+    background: linear-gradient(90deg, #87CEFA, #B0E0E6, #ADD8E6, #4682B4);
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s ease infinite;
+    padding: 2vw 10vw;
+
+
+
+    h1 {
+        font-size: 4.5em;
+        font-weight: bold;
+        color: #fff;
+        transition: all 0.5s ease;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        text-align: center;
+        padding-bottom: 20px;
+        padding-right: 0.6em;
+        padding-top: 80px;
+
+        @media (max-width:768px) {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #fff;
+            transition: all 0.5s ease;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding-bottom: 10px;
+            padding-right: 0.6em;
+            padding-top: 45px;
+
+        }
+    }
+
+    h1:hover {
+        color: #7ffc4a;
+        text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+        transform: scale(1.1);
+
+        @media (max-width:768px) {
+            transform: scale(1.2);
+        }
+
+
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 24vw 24vw 24vw;
+        gap: 24px;
+        list-style: none;
+        justify-items: center;
+
+        @media (max-width:768px) {
+            display: block;
+            gap: 24px;
+            list-style: none;
+            justify-items: center;
+
+        }
+
+
+        &__item {
+            align-items: center;
+
+            &--name {
+                color: #0e0d0d;
+                font-size: 2em;
+                font-weight: bold;
+                text-align: center;
+                padding: 20px;
+                @media (max-width:768px) {
+                    font-size: 1.5em;
+                }
+            }
+
+        }
+    }
+
+    img {
+        width: 350px;
+        transition: transform 0.3s ease;
+        border-radius: 8px;
+
+        @media (max-width:768px) {
+            width: 270px;
+
+        }
+
+    }
+
+    img:hover {
+        transform: scale(1.03);
+    }
+
+}
+
+
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
